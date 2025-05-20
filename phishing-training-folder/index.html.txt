@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -83,7 +82,7 @@
   <div class="container">
     <div class="emoji">⚠️😬⚠️</div>
     <div class="gif-container">
-      <img src="phishing.gif.gif" alt="Phishing Alert GIF">
+      <img src="phishing.gif" alt="Phishing Alert GIF">
     </div>
     <h1>GOTCHA! YOU HAVE BEEN PHISHED!</h1>
     <p>🚨 Don't click on any random and suspicious-looking URLs! 🔗🐟</p>
@@ -107,6 +106,5 @@
 
     setInterval(createWarningEmoji, 200);
   </script>
-
 </body>
 </html>
