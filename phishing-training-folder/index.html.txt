@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You've Been Phished!</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+    .container {
+      background-color: #fff8e1;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 600px;
+      margin: 40px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      color: #e53935;
+      font-size: 2em;
+    }
+    p {
+      color: #333;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+    .button {
+      background-color: #d500f9;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      text-decoration: none;
+      border-radius: 25px;
+      display: inline-block;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #aa00ff;
+    }
+    .emoji {
+      font-size: 2rem;
+    }
+    .gif-container img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    .confetti span {
+      position: absolute;
+      font-size: 30px;
+      animation: fall 5s linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="confetti" id="confetti"></div>
+
+  <div class="container">
+    <div class="emoji">⚠️😬⚠️</div>
+    <div class="gif-container">
+      <img src="phishing.gif.gif" alt="Phishing Alert GIF">
+    </div>
+    <h1>GOTCHA! YOU HAVE BEEN PHISHED!</h1>
+    <p>🚨 Don't click on any random and suspicious-looking URLs! 🔗🐟</p>
+    <a class="button" href="https://forms.gle/mPvu19bdJwK5MJH9A" target="_blank">Oops! I Clicked 😅</a>
+  </div>
+
+  <script>
+    const confettiContainer = document.getElementById("confetti");
+
+    function createWarningEmoji() {
+      const span = document.createElement("span");
+      span.textContent = "⚠️";
+      span.style.left = Math.random() * 100 + "vw";
+      span.style.animationDuration = 3 + Math.random() * 2 + "s";
+      confettiContainer.appendChild(span);
+
+      setTimeout(() => {
+        span.remove();
+      }, 5000);
+    }
+
+    setInterval(createWarningEmoji, 200);
+  </script>
+
+</body>
+</html>
